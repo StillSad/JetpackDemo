@@ -10,10 +10,10 @@ data class Article(
     val gzhId: String?,
     val link: String?,
     //文章旁的图片
-    val cover: String?,
+    val cover: String,
     //创建时间
     val createTime: String?,
-    val title: String?,
+    val title: String,
     val name: String?,
     val articleId: String?,
     //文章音频

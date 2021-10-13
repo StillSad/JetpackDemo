@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:padding="15dp"
-    android:layout_height="150dp">
-    <ImageView
-        android:id="@+id/iv_img"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_launcher_background"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_marginStart="10dp"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/iv_img"
+<layout>
+    <data>
+        <import type="com.thinkwage.jetpackdemo.bean.Article"/>
+        <import type="com.thinkwage.jetpackdemo.R"/>
+
+        <variable
+            name="data"
+            type="Article" />
+
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</RelativeLayout>
+        android:padding="15dp"
+        android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_centerVertical="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            imageUrl="@{data.cover}"
+            defaultImg="@{R.mipmap.ic_launcher_round}"
+            />
+        <TextView
+            android:text="@{data.title}"
+            android:id="@+id/tv_title"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</layout>
