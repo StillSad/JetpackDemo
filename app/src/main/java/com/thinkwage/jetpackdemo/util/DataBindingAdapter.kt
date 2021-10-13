@@ -16,6 +16,11 @@ fun setAdapter(recyclerView: RecyclerView,adapter:RecyclerView.Adapter<*>) {
     recyclerView.adapter = adapter
 }
 
+@BindingAdapter("uploadOnScroll")
+fun uploadOnScroll(recyclerView: RecyclerView,scroll:RecyclerView.OnScrollListener) {
+    recyclerView.addOnScrollListener(scroll)
+}
+
 @BindingAdapter("imageUrl","defaultImg",requireAll = true)
 fun setImage(imageView: ImageView,imageUrl: String, defaultImg: Int) {
     //defaultImg类型:Int -> 通过@{R.mipmap.ic_launcher_round}获取资源

@@ -6,10 +6,14 @@
     <data>
 
         <import type="com.thinkwage.jetpackdemo.adapter.ArticleAdapter" />
+        <import type="com.thinkwage.jetpackdemo.util.UploadOnScrollListener" />
 
         <variable
             name="adapter"
             type="ArticleAdapter" />
+        <variable
+            name="uploadListener"
+            type="UploadOnScrollListener" />
     </data>
 
     <FrameLayout
@@ -19,10 +23,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_content"
-            adapter="@{adapter}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            adapter="@{adapter}"
+            uploadOnScroll="@{uploadListener}"
+ />
 
     </FrameLayout>
 </layout>

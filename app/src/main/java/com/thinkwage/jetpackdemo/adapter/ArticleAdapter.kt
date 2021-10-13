@@ -8,7 +8,14 @@ import com.thinkwage.jetpackdemo.R
 import com.thinkwage.jetpackdemo.bean.Article
 import com.thinkwage.jetpackdemo.databinding.ItemArticleBinding
 
-class ArticleAdapter(val data:MutableList<Article>) : RecyclerView.Adapter<ArticleViewHolder>() {
+class ArticleAdapter() : RecyclerView.Adapter<ArticleViewHolder>() {
+    val data = mutableListOf<Article>()
+    fun setData(data:MutableList<Article>) {
+        this.data.clear();
+        this.data.addAll(data)
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
 
         return ArticleViewHolder(ItemArticleBinding.inflate(LayoutInflater.from(parent.context)))
